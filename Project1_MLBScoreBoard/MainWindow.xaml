@@ -1,0 +1,30 @@
+﻿<Window x:Class="Project1_MLBScoreBoard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project1_MLBScoreBoard"
+        mc:Ignorable="d"
+        Title="Bonnie's MLB ScoreBoard" Height="450" Width="300" Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="3*"/>
+            <RowDefinition Height ="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="*Welcome to MLB*" HorizontalAlignment="Center" Margin="10" FontWeight="Bold" Foreground="Blue"/>
+            <TextBlock Text="Choose a year you want to check out" HorizontalAlignment="Center"/>
+            <TextBlock Margin="15" Text="NOTE: Current year(e.g. 2017) might take time. To get the most updated info, it gets refreshed as soon as you choose it." Foreground="Red" TextWrapping="Wrap"></TextBlock>
+            <ComboBox x:Name="cb_years" Margin="10" SelectionChanged="cb_years_SelectionChanged" />
+            <DatePicker x:Name="datepicker_" Margin="10" IsEnabled="False" VerticalAlignment="Center" SelectedDateChanged="datepicker__SelectedDateChanged" />
+            <TextBlock x:Name="tb_loadingInfo" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,15,5,5"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+            <Button x:Name="bt_confirm" Content="Confirm" VerticalAlignment="Center" IsEnabled="False" Click="bt_confirm_Click" />
+        </StackPanel>
+        
+    </Grid>
+</Window>
